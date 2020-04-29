@@ -8,8 +8,7 @@ if [[ ! "$1" =~ ^[[:digit:]]+$ ]]; then
     exit 1
 fi
 
-while true
-do
+while true; do
     aplay -q beat.wav &
     sleep "$(bc <<< "scale=2; 60/$1")"
 done
