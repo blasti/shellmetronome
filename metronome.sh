@@ -3,21 +3,13 @@
 # metrononme.sh by blastbeat
 # works on my Debian...
 
-invalid_arg() {
+if [[ ! "$1" =~ ^[[:digit:]]+$ ]]; then
     echo "Usage: metronome beats-per-minute" >&2
     exit 1
-}
+fi
 
-[[ ! "$1" =~ ^[[:digit:]]+$ ]] && invalid_arg
-
-bpm=$(bc <<-EOF
-scale = 2
-60/$1
-EOF
-)
-
-while true; 
+while true
 do
     aplay -q beat.wav &
-    sleep "$bpm";
+    sleep "$(bc <<< "scale=2; 60/$1")"
 done
