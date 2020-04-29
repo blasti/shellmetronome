@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# metrononme.sh by blastbeat
+# metronome.sh by blastbeat
 # works on my Debian...
 
 if [[ ! "$1" =~ ^[[:digit:]]+$ ]]; then
