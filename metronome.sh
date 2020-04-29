@@ -4,7 +4,7 @@
 # works on my Debian...
 
 if [[ ! "$1" =~ ^[[:digit:]]+$ ]]; then
-    echo "Usage: metronome beats-per-minute" >&2
+    echo "Usage: metronome.sh beats-per-minute" >&2
     exit 1
 fi
 
